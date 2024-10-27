@@ -1,5 +1,4 @@
 package newshelf;
-
-public interface IBook {
-
+public sealed interface IBook permits IComic, IFiction, ITextBook {
+    //String title();
 }
