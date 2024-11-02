@@ -5,21 +5,21 @@ public class NewSelection {
 
     // Implementing the getAgeOrTitle method
     public static String getAgeOrTitle(Object o) {
-        if (o instanceof IComic comic) {
-            return comic.title();
-        } else if (o instanceof IFiction fiction) {
-            return fiction.name();
-        } else if (o instanceof ITextBook textBook) {
-            return textBook.subject();
-        } else {
-            return "";
-        }
-        // return switch (o) {
-        //     case IComic comic -> comic.title();
-        //     case IFiction fiction -> fiction.name();
-        //     case ITextBook textBook -> textBook.subject();
-        //     default -> "";
-        // };
+        // if (o instanceof IComic comic) {
+        //     return comic.title();
+        // } else if (o instanceof IFiction fiction) {
+        //     return fiction.name();
+        // } else if (o instanceof ITextBook textBook) {
+        //     return textBook.subject();
+        // } else {
+        //     return "";
+        // }
+        return switch (o) {
+            case IComic comic -> comic.title();
+            case IFiction fiction -> fiction.name();
+            case ITextBook textBook -> textBook.subject();
+            default -> "";
+        };
     }
 
     public static void main(String[] args) {
