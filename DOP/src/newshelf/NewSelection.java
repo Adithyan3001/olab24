@@ -1,5 +1,9 @@
 package newshelf;
 
+import oldshelf.Comic;
+import oldshelf.Fiction;
+import oldshelf.FictionType;
+import oldshelf.TextBook;
 
 public class NewSelection {
 
@@ -14,10 +18,21 @@ public class NewSelection {
         // } else {
         //     return "";
         // }
+        // //typeswitch
+        // return switch (o) {
+        //     case IComic comic -> comic.title();
+        //     case IFiction fiction -> fiction.name();
+        //     case ITextBook textBook -> textBook.subject();
+        //     default -> "";
+        // };
+        // Record pattern with type switch
         return switch (o) {
-            case IComic comic -> comic.title();
-            case IFiction fiction -> fiction.name();
-            case ITextBook textBook -> textBook.subject();
+            case IComic(String title, int ageOfMainCharacter) -> 
+                title;
+            case IFiction(String title, String name, IFictionType type) -> 
+                name;
+            case ITextBook(String title, String subject) -> 
+                subject;
             default -> "";
         };
     }
