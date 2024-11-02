@@ -1,5 +1,6 @@
 package newshelf;
 
+
 public class NewSelection {
 
     // Implementing the getAgeOrTitle method
@@ -11,8 +12,14 @@ public class NewSelection {
         } else if (o instanceof ITextBook textBook) {
             return textBook.subject();
         } else {
-            return ""; // Return empty string if it's not a recognized Book type
+            return "";
         }
+        // return switch (o) {
+        //     case IComic comic -> comic.title();
+        //     case IFiction fiction -> fiction.name();
+        //     case ITextBook textBook -> textBook.subject();
+        //     default -> "";
+        // };
     }
 
     public static void main(String[] args) {
